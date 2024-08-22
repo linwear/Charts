@@ -114,4 +114,7 @@ open class CandleChartDataSet: LineScatterCandleRadarChartDataSet, CandleChartDa
     
     /// Are decreasing values drawn as filled?
     open var isDecreasingFilled: Bool { return decreasingFilled }
+    
+    /// 🌟 The corner radius of the candle bar. (0.0 means no corner radius)
+    open var barCornerRadiusFactor: CGFloat = 0.0
 }

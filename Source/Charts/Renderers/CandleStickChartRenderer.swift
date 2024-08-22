@@ -158,6 +158,11 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
                 
                 trans.rectValueToPixel(&_bodyRect)
                 
+                /// 🌟🌟🌟🌟🌟🌟
+                /// 🌟 Defines a rounded rectangle with a specified corner radius.
+                let bezierPath = UIBezierPath(roundedRect: _bodyRect, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: _bodyRect.width * dataSet.barCornerRadiusFactor, height: _bodyRect.height * dataSet.barCornerRadiusFactor))
+                /// 🌟🌟🌟🌟🌟🌟
+                
                 // draw body differently for increasing and decreasing entry
 
                 if open > close
@@ -169,7 +174,12 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
                     if dataSet.isDecreasingFilled
                     {
                         context.setFillColor(color.cgColor)
-                        context.fill(_bodyRect)
+                        /// context.fill(barRect) // Original code
+                        
+                        /// 🌟🌟🌟🌟🌟🌟
+                        /// 🌟 Defines a rounded rectangle with a specified corner radius.
+                        context.addPath(bezierPath.cgPath)
+                        context.drawPath(using: .fill)
                     }
                     else
                     {
@@ -186,7 +196,12 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
                     if dataSet.isIncreasingFilled
                     {
                         context.setFillColor(color.cgColor)
-                        context.fill(_bodyRect)
+                        /// context.fill(barRect) // Original code
+                        
+                        /// 🌟🌟🌟🌟🌟🌟
+                        /// 🌟 Defines a rounded rectangle with a specified corner radius.
+                        context.addPath(bezierPath.cgPath)
+                        context.drawPath(using: .fill)
                     }
                     else
                     {

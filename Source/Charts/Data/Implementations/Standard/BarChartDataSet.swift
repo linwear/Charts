@@ -123,9 +123,11 @@ open class BarChartDataSet: BarLineScatterCandleBubbleChartDataSet, BarChartData
     /// the alpha value (transparency) that is used for drawing the highlight indicator bar. min = 0.0 (fully transparent), max = 1.0 (fully opaque)
     open var highlightAlpha = CGFloat(120.0 / 255.0)
     
-    
+    /// 🌟 The corner radius of the bar chart. (0.0 means no corner radius)
     open var barCornerRadiusFactor: CGFloat = 0.0
     
+    /// 🌟 This property allows external configuration of the corner rounding positions for the bar.
+    /// 🌟  By default, all corners are rounded (`UIRectCorner.allCorners`).
     open var barRoundingCorners: UIRectCorner = UIRectCorner.allCorners;
     
     // MARK: - NSCopying

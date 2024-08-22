@@ -63,4 +63,7 @@ public protocol CandleChartDataSetProtocol: LineScatterCandleRadarChartDataSetPr
     
     /// Are decreasing values drawn as filled?
     var isDecreasingFilled: Bool { get }
+    
+    /// 🌟 The corner radius of the bar chart. (0.0 means no corner radius)
+    var barCornerRadiusFactor: CGFloat { get set }
 }
